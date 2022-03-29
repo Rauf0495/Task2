@@ -14,11 +14,11 @@ namespace Task2._1
 
             _4reqemliEded = Math.Abs(_4reqemliEded); // eger menfi eded verilerse
 
-            if (_4reqemliEded>=1000&_4reqemliEded<=9999)//verilenler az olduguna gore length dan heleki istifade etmirem
+            if (_4reqemliEded>=1000&_4reqemliEded<=9999)
             {
-                Console.Write($"{_4reqemliEded} ededinin evveline  7, axirinia 8 reqemini elave edirik edirik:");
-
-                Console.WriteLine(7+$"{_4reqemliEded}"+8);
+                _4reqemliEded = (70000 + _4reqemliEded) * 10 + 8;
+                                
+                Console.WriteLine(_4reqemliEded);
             }
 
 

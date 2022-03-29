@@ -15,21 +15,21 @@ namespace Task2._6
 
             _4reqemliEded = Math.Abs(_4reqemliEded); // eger menfi eded verilerse
 
-            if (_4reqemliEded >= 999 && _4reqemliEded <= 9999)//verilenler az olduguna gore length dan heleki istifade etmirem
+            if (_4reqemliEded >= 999 && _4reqemliEded <= 9999)
             {
-                Console.Write($"{_4reqemliEded} ededinin evvel 20%-ni:");
+                Console.Write($"{_4reqemliEded}*20%=");
 
                 _4reqemliEded = ((_4reqemliEded * 20) / 100);
 
                 Console.WriteLine(_4reqemliEded);
 
-                Console.Write($"Sonra {_4reqemliEded} ededinin 10%-ni:");
+                Console.Write($"{_4reqemliEded}*10%=");
 
                 _4reqemliEded = ((_4reqemliEded * 10) / 100);
 
                 Console.WriteLine(_4reqemliEded);
 
-                Console.Write($"alinan {_4reqemliEded} ededinin kvadratini tapiriq:");
+                Console.Write($"{_4reqemliEded}*{_4reqemliEded}=");
                             
                 Console.WriteLine(Math.Pow(_4reqemliEded,2));
             }

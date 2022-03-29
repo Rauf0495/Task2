@@ -14,23 +14,14 @@ namespace Task2._4
 
             _3reqemliEded = Math.Abs(_3reqemliEded); // eger menfi eded verilerse
 
-            if (_3reqemliEded >= 100 & _3reqemliEded <= 999)//verilenler az olduguna gore length dan heleki istifade etmirem
+            if (_3reqemliEded >= 100 & _3reqemliEded <= 999)
             {
-                Console.Write($"{_3reqemliEded} ededinin axirina 7 elave edirik:");
+                Console.Write($"{_3reqemliEded} ededinin sonuna 7 elave edirik ve 7%=");
 
-                _3reqemliEded =Convert.ToInt32($"{_3reqemliEded}7");
+                _3reqemliEded = (_3reqemliEded * 10 + 7)*7/100;
 
                 Console.WriteLine($"{_3reqemliEded}");
-
-                Console.WriteLine($"alinan {_3reqemliEded}  reqeminin  7 faizini tapiriq:");
-
-                Console.Write($"{_3reqemliEded} ededinin 7 faizi=");
-
-                Console.WriteLine((_3reqemliEded *7)/100);
-
-
-
-
+                                
             }
             else
             {

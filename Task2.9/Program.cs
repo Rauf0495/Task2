@@ -6,58 +6,86 @@ namespace Task2._9
     {
         static void Main(string[] args)
         {
-            // 3 dene 6 reqemli eded verilib. Her birinin 10 faizini tapib neticeleri topla. Alinan cavabin 10% tap.
+            //4 dene 6 reqemli eded verilib. Ededlerin hamisinin 10 faizini tap ve topla. Sonra hamisinin 15 faizini tap ve topla.
 
-            Console.Write("Birinci  6 reqemli ededi daxil edin:");
+            //Sonra yekunda alinanlar iki cavabi vur biri birine. Alinan neticenin evvel 10% tap sonra ise hemin cavabin 11% tap.
 
-            string _1incieded = Console.ReadLine();
+
+            int[] sixDigitNumbers = new int[6];
+
+              
+
+            Console.WriteLine("6 reqemli ededi daxil edin:");
+
             
-            Console.Write("Ikinci  6 reqemli ededi daxil edin:");
-
-            string _2incieded = Console.ReadLine();
-
-            Console.Write("Ucuncu  6 reqemli ededi daxil edin:");
-
-            string _3incieded = Console.ReadLine();
-
-            if (_1incieded.Length==6&& _2incieded.Length == 6&&_3incieded.Length == 6)
+            for (int i = 0; i < 4; i++)
             {
-                double a = Convert.ToDouble(_1incieded);
-                double b = Convert.ToDouble(_2incieded);
-                double c = Convert.ToDouble(_3incieded);
+            l1:
+                Console.Write($"{i + 1}:");
 
-                Console.Write($"{a}*10%=");
-                a = ((a * 10) / 100);
-                Console.WriteLine(a);
-                Console.Write($"{b}*10%=");
-                b = ((b * 10) / 100);
-                Console.WriteLine(b);
-                Console.Write($"{c}*10%=");
-                c = ((c * 10) / 100);
-                Console.WriteLine(c);
+                int preCheck = Convert.ToInt32(Console.ReadLine());
 
-                Console.Write($"{a}+{b}+{c}=");
+                preCheck=Math.Abs(preCheck);
 
-                double cem = a + b + c;
 
-                Console.WriteLine(cem);
+                if (check(preCheck))
+                {
+                    sixDigitNumbers[i] = preCheck;
+                }
 
-                Console.Write($"{cem}*10%=");
+                else
+                {
+                    goto l1;
+                }
+            }
 
-                cem = (cem * 10) / 100;
 
-                Console.WriteLine(cem);
+            int sum1 = 0;
+
+            for (int i = 0; i < 4; i++)
+            {
+                sum1 = sum1 + sixDigitNumbers[i];
 
             }
 
-            else
-            {
-                Console.WriteLine("Verilenler duzgun deyil");
-            }
+            Console.WriteLine($"{sixDigitNumbers[0]}+{sixDigitNumbers[1]}+{sixDigitNumbers[2]}+{sixDigitNumbers[3]}={sum1}");
+
+
+            Console.Write($"{sum1}*10%=");
+            sum1 = sum1 * 10 / 100;
+            Console.WriteLine(sum1);
+
+            Console.Write($"{sum1}*15%=");
+            int sum2 = sum1 * 15 / 100;
+            Console.WriteLine(sum2);
+
+            int mult = sum1 * sum2;
+            Console.WriteLine($"{sum1}*{sum2}={mult}");
+
+            Console.Write($"{mult}*10*11%=");
+
+            mult = mult * 10 / 100 * 11 / 100;
+
+            Console.WriteLine(mult);
+            
+            
 
         }
-   
-    
-    
+
+
+        static bool check(int a)
+        {
+
+            if (a >= 100000 && a <= 999999)
+            {
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("6 reqemli deyil");
+                return false;
+
+            }
+        }
     }
 }

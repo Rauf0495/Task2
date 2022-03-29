@@ -19,25 +19,28 @@ namespace Task2._8
             _1incieded = Math.Abs(_1incieded);//eger menfi eded verilerse
             _2incieded = Math.Abs(_2incieded);//eger menfi eded verilerse
 
-            if (_1incieded >= 1000 && _1incieded <= 9999 && _2incieded >= 1000000 && _2incieded < 10000000)//verilenler az olduguna gore length dan heleki istifade etmirem
+            if (_1incieded >= 1000 && _1incieded <= 9999 && _2incieded >= 1000000 && _2incieded < 10000000)
             {
-                Console.Write($"{_1incieded}in 4 %-i:");
+                Console.Write($"{_1incieded}*4%=");
                 _1incieded = ((_1incieded * 4) / 100);
                 Console.WriteLine(_1incieded);
 
-                Console.Write($"{_2incieded}in 9 %-i:");
+                Console.Write($"{_2incieded}*9%=");
                 _2incieded = ((_2incieded * 9) / 100);
                 Console.WriteLine(_2incieded);
-                Console.Write($"({_1incieded}+{_2incieded})*10%=:");
+
+                Console.Write($"({_1incieded}+{_2incieded})*10%=");
                 int cemHasil = ((_1incieded + _2incieded) * 10) / 100;
                 Console.WriteLine(cemHasil);
             }
             else
             {
                 Console.WriteLine("Verilenler duzgun deyil");
-            }           
-                
-        
-        }       
+            }
+
+
+            
+
+        }
     }
 }

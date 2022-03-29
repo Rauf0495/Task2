@@ -15,17 +15,26 @@ namespace Task2._5
 
             _4reqemliEded = Math.Abs(_4reqemliEded); // eger menfi eded verilerse
 
-            if (_4reqemliEded>=999&&_4reqemliEded<=9999)//verilenler az olduguna gore length dan heleki istifade etmirem
+            if (_4reqemliEded>=999&&_4reqemliEded<=9999)
             {
-                Console.Write($"{_4reqemliEded} ededinin evveline 4, axirina 44 elave edirik:");
+                Console.Write($"{_4reqemliEded} ededin evveline 4 artiraq");
 
-                _4reqemliEded = Convert.ToInt32(($"4{_4reqemliEded}44"));
+                _4reqemliEded = (_4reqemliEded + 40000); 
 
                 Console.WriteLine(_4reqemliEded);
 
-                Console.Write($"alinan {_4reqemliEded}  reqeminin  44 faizini tapiriq:");
+                Console.Write($"{_4reqemliEded} ededin sonuna 44 artiraq");
 
-                Console.WriteLine((_4reqemliEded * 44) / 100);
+                _4reqemliEded = (_4reqemliEded  * 100 + 44);
+
+                Console.WriteLine(_4reqemliEded);
+
+                Console.Write($"{_4reqemliEded}*44%=");
+
+                _4reqemliEded = (_4reqemliEded*44/100);
+
+                Console.WriteLine(_4reqemliEded);
+
 
             }
             else

@@ -6,55 +6,76 @@ namespace Task211
     {
         static void Main(string[] args)
         {
-            //4 dene 5 reqemli eded verilib. Her I ededin ustune III ededi gel . II ededin usutune IV eeddi gel.Sonra cavablari vur birbirine. Alinan neticeden III ededin 3%-ni cix.
+            //4 dene 5 reqemli eded verilib. Her I ededin ustune III ededi gel . II ededin usutune IV ededi gel.Sonra cavablari vur birbirine. Alinan neticeden III ededin 3%-ni cix.
 
-            Console.Write("Birinci  5 reqemli ededi daxil edin:");
+            Console.WriteLine("PLease enter five digit number");
 
-            string _1incieded = Console.ReadLine();
+            int[] fiveDigitNuber = new int[4];
 
-            Console.Write("Ikinci  5 reqemli ededi daxil edin:");
-
-            string _2incieded = Console.ReadLine();
-
-            Console.Write("Ucuncu  5 reqemli ededi daxil edin:");
-
-            string _3incieded = Console.ReadLine();
-
-            Console.Write("Dorduncu  5 reqemli ededi daxil edin:");
-
-            string _4incieded = Console.ReadLine();
-
-            if (_1incieded.Length == 5 && _2incieded.Length == 5 && _3incieded.Length == 5&& _4incieded.Length==5)
+            for (int i = 0; i <4; i++)
             {
-                double a = Convert.ToDouble(_1incieded);
-                double b = Convert.ToDouble(_2incieded);
-                double c = Convert.ToDouble(_3incieded);
-                double d = Convert.ToDouble(_4incieded);
+                l1:
+                Console.Write($"{i+1}:");
 
-                Console.Write($"{a}+{c}=");
-                double cemAC = a + c;
-                Console.WriteLine(cemAC);
-                Console.Write($"{b}+{d}=");
-                double cemBD = b + d;
-                Console.WriteLine(cemBD);
-                Console.Write($"{cemAC}*{cemBD}=");
-                double hasilACBD = cemAC * cemBD;
-                Console.WriteLine(hasilACBD);
+                int preCheck=Convert.ToInt32(Console.ReadLine());
 
-                Console.Write($"{hasilACBD}-({c}*7%)=");
+                if (check(preCheck))
+                {
+                    fiveDigitNuber[i] = preCheck;
+                }
+                else
+                {
+                    Console.WriteLine("Not five digit number");
 
-                hasilACBD = (hasilACBD - ((c*7)/100));
+                    goto l1;
 
-                Console.WriteLine(hasilACBD);
+                }
+            }
 
-                
+            int sum13 = fiveDigitNuber[0] + fiveDigitNuber[2];
+
+            int sum24 = fiveDigitNuber[1] + fiveDigitNuber[3];
+
+            Console.WriteLine($"{fiveDigitNuber[0]}+{fiveDigitNuber[2]}={sum13}");
+        
+            Console.WriteLine($"{fiveDigitNuber[1]}+{fiveDigitNuber[3]}={sum24}");
+       
+
+            int mult = sum13 * sum24;
+
+            Console.WriteLine($"{sum13}*{sum24}={mult}");
+
+            int result = mult - fiveDigitNuber[2];
+
+            Console.WriteLine($"{mult}-{fiveDigitNuber[2]}={result}");
+
+
+
+
+
+
+
+
+        }
+        static bool check (int a)
+        {
+            if (a>=+10000&&a<=99999)
+            {
+                return true;    
 
             }
             else
             {
-                Console.WriteLine("Verilenler duzgun deyil");
+                return false;
             }
 
+
+
         }
+
+    
+    
+    
+    
     }
 }

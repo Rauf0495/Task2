@@ -8,53 +8,78 @@ namespace Task2._10
         {
             // 3 dene 4 reqemli eded verilib. I ededin 1%-ni, II ededin 2% , III ededin 3 % tap.Neticeleri bir birinden cix. Alinan cavabin ustune III ededin 7% faizini gel
 
-            Console.Write("Birinci  4 reqemli ededi daxil edin:");
+            int[]fourDigitNumber= new int[3];
 
-            string _1incieded = Console.ReadLine();
+            Console.WriteLine("Please enter four digit number");
 
-            Console.Write("Ikinci  4 reqemli ededi daxil edin:");
-
-            string _2incieded = Console.ReadLine();
-
-            Console.Write("Ucuncu  4 reqemli ededi daxil edin:");
-
-            string _3incieded = Console.ReadLine();
-
-            if (_1incieded.Length == 4 && _2incieded.Length == 4 && _3incieded.Length == 4)
+            for (int i = 0; i < 3; i++)
             {
-                double a = Convert.ToDouble(_1incieded);
-                double b = Convert.ToDouble(_2incieded);
-                double c = Convert.ToDouble(_3incieded);
+                l1:
+                Console.Write($"{i+1}:");
 
-                Console.Write($"{a}*1%=");
-                a = ((a * 1) / 100);
-                Console.WriteLine(a);
-                Console.Write($"{b}*1%=");
-                b = ((b * 1) / 100);
-                Console.WriteLine(b);
-                Console.Write($"{c}*1%=");
-                c = ((c * 1) / 100);
-                Console.WriteLine(c);
+                int preCheck=Convert.ToInt32(Console.ReadLine());
 
-                Console.Write($"{a}-{b}-{c}=");
+                if (check(preCheck))
+                {
+                    fourDigitNumber[i] = preCheck;
+                }
 
-                double ferq = a - b - c;
+                else
+                {
+                    Console.WriteLine("it is not 4 digit number");
+                    goto l1;
 
-                Console.WriteLine(ferq);
 
-                Console.Write($"{ferq}+{c}*7%=");
+                }
 
-                ferq = ferq + ((c * 7) / 100);
-
-                Console.WriteLine(ferq);
 
             }
+
+            int percentFourDigits = (fourDigitNumber[0] + fourDigitNumber[1] + fourDigitNumber[2])*7/100;
+
+
+            Console.Write($"{fourDigitNumber[0]}*1%=");
+
+            Console.WriteLine(fourDigitNumber[0] = fourDigitNumber[0] * 1 / 100);
+
+           
+            Console.Write($"{fourDigitNumber[1]}*2%=");
+
+            Console.WriteLine(fourDigitNumber[1] = fourDigitNumber[1] * 2 / 100);
+
+            Console.Write($"{fourDigitNumber[2]}*3%=");
+
+            Console.WriteLine(fourDigitNumber[2] = fourDigitNumber[2] * 3 / 100);
+
+            Console.Write($"{fourDigitNumber[0]}-{fourDigitNumber[1]}-{fourDigitNumber[2]}=");
+
+            int result = fourDigitNumber[0] - fourDigitNumber[1] - fourDigitNumber[2];
+                        
+            Console.WriteLine(result);
+
+            Console.Write($"{result}+{percentFourDigits}=");
+
+            Console.WriteLine(result+ percentFourDigits);
+
+        }   
+        
+        
+        static bool check (int a)
+
+        {
+            if (a>=999&&a<=9999)
+            {
+                return true;
+            }
+
             else
-            {
-                Console.WriteLine("Verilenler duzgun deyil");
+            {                
+                return false;
+                 
             }
-        
-        
         }
+
+
+            
     }
 }

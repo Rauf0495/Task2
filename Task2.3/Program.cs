@@ -14,17 +14,11 @@ namespace Task2._3
 
             _5reqemliEded =Math.Abs(_5reqemliEded); // eger menfi eded verilerse
             
-            if (_5reqemliEded >= 10000 & _5reqemliEded <= 99999)//verilenler az olduguna gore length dan heleki istifade etmirem
+            if (_5reqemliEded >= 10000 & _5reqemliEded <= 99999)
             {
-                Console.Write($"{_5reqemliEded} ededinin 18%i=");
+                int netice = (((_5reqemliEded * 18) / 100) * 3 / 100);
 
-                int _18faizi = ((_5reqemliEded * 18) / 100);
-
-                Console.WriteLine(_18faizi);
-
-                Console.Write($"alinan {_18faizi}  ededin 3%i=");
-
-                Console.WriteLine((_18faizi*3)/100);
+                Console.WriteLine($"({_5reqemliEded}*18%)*3%={netice}");
             }
 
 

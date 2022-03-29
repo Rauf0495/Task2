@@ -19,23 +19,33 @@ namespace Task2._7
             _1ci5reqemliEded = Math.Abs(_1ci5reqemliEded);//eger menfi eded verilerse
             _2ci5reqemliEded = Math.Abs(_2ci5reqemliEded);// eger menfi eded verilerse
 
-            if (_1ci5reqemliEded>=10000&& _1ci5reqemliEded<=99999&& _2ci5reqemliEded >= 10000&& _2ci5reqemliEded <= 99999)//verilenler az olduguna gore length dan heleki istifade etmirem
+            if (_1ci5reqemliEded>=10000&& _1ci5reqemliEded<=99999&& _2ci5reqemliEded >= 10000&& _2ci5reqemliEded <= 99999)
             {
-                Console.Write($"Verilen ededleri toplayiriq:{_1ci5reqemliEded} + {_2ci5reqemliEded}=");
+                Console.Write($"{_1ci5reqemliEded} + {_2ci5reqemliEded}=");
 
                 int cem = _1ci5reqemliEded + _2ci5reqemliEded;
                 
                 Console.WriteLine(cem);
 
-                Console.Write($"Alinan {cem} reqeminin  evveline ve axirina 5 reqemini artiriq:");
+                Console.Write($"{cem} reqeminin  evveline ve axirina 5 reqemini artiraq:");
+                int a1 = 0;
+                
 
-                cem = Convert.ToInt32($"5{cem}5");
+                if (cem >= 10000 && cem<=99999)
+                {
+                    a1 = (cem + 500000) * 10 + 5;
+                    Console.WriteLine(a1);
+                }
+                else if (cem >= 100000 && cem <= 999999)
+                {
+                    a1 = (cem + 5000000) * 10 + 5;
+                    Console.WriteLine(a1);
+                }
+               
 
-                Console.WriteLine(cem);
+                Console.Write($"{a1}*5%=");
 
-                Console.Write($"Alinan {cem} ededinin 5 faizini tapiriq: ");
-
-                Console.WriteLine((cem*5)/100);
+                Console.WriteLine((a1 * 5)/100);
 
             }
             else
