@@ -27,6 +27,9 @@ namespace Task2._1
                 Console.WriteLine("Verilenler duzgun deyil");
             }
 
+            
+           
+
 
         }
 
